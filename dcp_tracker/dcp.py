@@ -14,7 +14,7 @@ class Dcp:
 
     def write(self):
         """Ecriture dans le csv"""
-        with open('test.csv', 'a', encoding='utf-8') as test_csv:
+        with open('csv/test.csv', 'a', encoding='utf-8') as test_csv:
 
             writer = csv.writer(test_csv, delimiter=',')
             ligne = [self.ref, self.titre, self.date_arrivee, self.labo, self.distrib, self.num]
@@ -42,7 +42,7 @@ class Dcp:
         """Verifie si le num du distrib existe dans le fichier distrib.csv"""
         print("Recherche le num  dans la base de donnée... ")
 
-        with open('distribs.csv', 'r', encoding='utf-8') as distribs_csv:
+        with open('csv/distribs.csv', 'r', encoding='utf-8') as distribs_csv:
 
             reader = csv.reader(distribs_csv, delimiter=",")
             search_state = 0
@@ -56,7 +56,7 @@ class Dcp:
                     self.num = distrib[1]
                     break
 
-        with open('distribs.csv', 'a', encoding='utf-8') as distribs_csv:
+        with open('csv/distribs.csv', 'a', encoding='utf-8') as distribs_csv:
 
             if search_state == 0:
                 self.num = input("Aucune correspondance, entrez un numero de telephone : ")
@@ -75,68 +75,3 @@ class Dcp:
         print("Distrib : ", self.distrib)
         print("Num distrib : ", self.num)
         print("------------------------")
-
-
-def search_in_csv():
-    """Recherche a partir d'un item mentionne dans le fichier .csv"""
-    search_item = input("item a rechercher : ")
-    search_state = 0
-    found = []
-    with open('test.csv', 'r', encoding='utf-8') as test_csv:
-
-        reader = csv.reader(test_csv, delimiter=',')
-
-        for ligne in reader:
-            for item in ligne:
-                if item == search_item:
-                    found.append(ligne)
-                    search_state = 1
-                    break
-                else:
-                    continue
-
-    if search_state == 0:
-        print("Aucune correspondance trouvée")
-
-    return found
-
-def read(data):
-    """Lit la liste en argument en la convertissant en objet Dcp et l'affichant dans la console"""
-    for csv_item in data:
-        dcp = Dcp()
-        dcp.convert(csv_item)
-        dcp.display()
-
-def read_all():
-    """Lit la totalite du fichier csv et l'affiche dans la console"""
-    with open('test.csv', 'r', encoding='utf-8') as test_csv:
-
-        reader = csv.reader(test_csv, delimiter=',')
-        read(reader)
-
-def app():
-    """Choix des operations"""
-    print("===MENU===")
-    print("Lire le fichier entier : tapez 1")
-
-    print("Ajouter un dcp : tapez 2")
-    print("Rechercher un dcp : tapez 3")
-
-    choix = input("Votre choix :")
-
-    match choix:
-        case "1":
-            read_all()
-        case "2":
-            dcp = Dcp()
-            dcp.get_dcp()
-            dcp.search_num()
-            dcp.write()
-        case "3":
-            data = search_in_csv()
-            read(data)
-        case _:
-            print("Saisie invalide")
-
-app()
-    
