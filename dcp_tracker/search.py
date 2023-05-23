@@ -1,9 +1,8 @@
 """Permet l'utilisation d'un dossier csv"""
 import csv
 
-def search_in_csv():
+def search_in_csv(search_item):
     """Recherche a partir d'un item mentionne dans le fichier .csv"""
-    search_item = input("item a rechercher : ")
     search_state = 0
     found = []
     with open('csv/test.csv', 'r', encoding='utf-8') as test_csv:
