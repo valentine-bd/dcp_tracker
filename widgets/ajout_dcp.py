@@ -1,5 +1,6 @@
 """Importation des modules"""
 import tkinter as tk
+from tkinter import messagebox
 
 from dcp_tracker.dcp import Dcp
 
@@ -41,7 +42,7 @@ class AjoutDcp(tk.LabelFrame, tk.Button):
         self.titre_input = Input(ajout_dcp, "Titre :")
         self.date_arrivee_input = Input(ajout_dcp, "Date d'arrivee :")
         self.labo_input = Input(ajout_dcp, "Labo :")
-        self.distributeur_input = Input(ajout_dcp, "distributeur :")
+        self.distributeur_input = Input(ajout_dcp, "Distributeur :")
         self.num_input = Input(ajout_dcp, "Numero de distributeur :")
 
         #Bouton d'ajout
@@ -56,4 +57,10 @@ class AjoutDcp(tk.LabelFrame, tk.Button):
         dcp.labo = self.labo_input.get_input()
         dcp.distrib = self.distributeur_input.get_input()
         dcp.num = self.num_input.get_input()
-        dcp.write()
+        yes = messagebox.askyesno("Confirmation d'ajout",
+        "Confirmez vous l'ajout de ce DCP à la base de donnée")
+
+        if yes:
+            dcp.write()
+        else:
+            pass
