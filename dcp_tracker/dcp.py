@@ -64,9 +64,17 @@ class Dcp:
                 writer = csv.writer(distribs_csv, delimiter=',')
                 writer.writerow(nouveau)
 
-
-
-    def display(self):
+    def console_display(self):
         """Affiche le contenu d'un objet Dcp dans la console"""
+        print("------------------------")
+        print("Titre : ", self.titre)
+        print("date d'entree : ", self.date_arrivee)
+        print("Labo : ", self.labo)
+        print("Distrib : ", self.distrib)
+        print("Num distrib : ", self.num)
+        print("------------------------")
+
+    def window_display(self):
+        """Retourne une chaine de caractere permettant l'affichage sur fenetre"""
         output = "Titre : " + self.titre + " \nDate d'entree : " + self.date_arrivee + " \nLabo : " + self.labo + " \nDistributeur : " + self.distrib + " \nNumero du distributeur : " + self.num
         return output

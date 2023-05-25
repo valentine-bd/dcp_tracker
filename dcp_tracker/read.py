@@ -9,7 +9,8 @@ def read(data):
     for csv_item in data:
         dcp = Dcp()
         dcp.convert(csv_item)
-        output = output + "\n---------------------\n" + dcp.display()
+        dcp.console_display()
+        output = output + "\n---------------------\n" + dcp.window_display()
     return output
 
 def read_all():

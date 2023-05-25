@@ -62,5 +62,7 @@ class AjoutDcp(tk.LabelFrame, tk.Button):
 
         if yes:
             dcp.write()
+            print("Ajout de :")
+            dcp.console_display()
         else:
             pass
