@@ -1,14 +1,11 @@
 """Importation des modules"""
-import tkinter as tk
+from widgets.main_window import MainWindow
 
-from widgets.ajout_dcp import AjoutDcp
-from widgets.output import Output
+class App():
+    """Classe correspondant à l'application"""
+    def main(self):
+        """Fonction principale"""     
+        MainWindow()
 
-window = tk.Tk()
-#window.geometry("1280x720")
-window.title("Dcp Tracker")
-
-AjoutDcp(window)
-Output(window)
-
-window.mainloop()
+if __name__ == '__main__':
+    App().main()

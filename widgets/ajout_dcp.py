@@ -4,10 +4,9 @@ from tkinter import messagebox
 
 from dcp_tracker.dcp import Dcp
 
-class Input(tk.Frame, tk.Label, tk.Entry):
+class Input():
     """Widget d'entree de variable"""
     def __init__(self, root, text_label):
-        super().__init__(root)
         self.create_gui(root, text_label)
 
     def create_gui(self, root, text_label):
