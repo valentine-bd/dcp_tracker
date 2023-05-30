@@ -1,15 +1,2 @@
-id,titre,dateArrivee,labo,distrib,num
-1,l'ecrampT,01/11/22,Aperture laboratories,Bnl,0789451298
-2,le Feur,14/07/09,Oscorp, Fondation Aether,0287456012
-3,Outer Wilds,10/09/21,Moebius,Anapurna,0154875623
-4,Super Macron Maker,01/15/18,le CERN,Le Crous,0147982356
-5,Rapide ainsi que mecontent,10/24/20,Dinoco,Vilebrequin,0415489832
-6,Bagnoles,14/02/16,Dinoco,La lampe la,0387452036
-7,Mr Crow,26/09/10,Rusty Lake Hotel,The white door,1657654988
-8,final,22/05/223,chez oim,test,0120325874
-9,final le retour,22/05/23,chez oim,nouveau truc,4
-10,final 3 contre ataque,22/05/23,chez oim,test,0120325874
-11,final 4 ...,22/05/23,chez oim,nouveau truc encore,7894546123
-,test,test,test,test,test
-,bla,bla,bla,bla,bla
-,A,B,C,D,E
+1,titre test,date test,labo test,distrib test,0123456789
+3,ajout titre,ajout date,ajout labo,ajout distrib,ajout num

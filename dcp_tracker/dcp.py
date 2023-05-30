@@ -28,7 +28,7 @@ class Dcp:
         self.date_arrivee = from_csv[2]
         self.labo = from_csv[3]
         self.distrib = from_csv[4]
-        self.num = from_csv[5]
+        self.num = from_csv[5]   
 
     def get_dcp(self):
         """Obtient un objet Dcp a partir de la console"""

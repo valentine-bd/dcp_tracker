@@ -4,6 +4,7 @@ import tkinter as tk
 from widgets.ajout_dcp import AjoutDcp
 from widgets.output import Output
 from widgets.search import Search
+from widgets.delete import Delete
 
 class MainWindow():
     """Classe pilotant l'aspect de la fenetre principale"""
@@ -23,6 +24,7 @@ class MainWindow():
         frame1 = tk.Frame(window)
         AjoutDcp(frame1)
         Search(frame1, output)
+        Delete(frame1)
         frame1.pack(side=tk.LEFT)
 
         window.mainloop()

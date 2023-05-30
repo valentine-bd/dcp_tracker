@@ -17,7 +17,7 @@ class Search():
         search_item =tk.LabelFrame(root, text="Rechercher par item")
         search_item.pack()
 
-        self.item = Input(search_item, "Rechercher :")
+        self.item = Input(search_item, "Item :")
 
         search = tk.Button(search_item
                            , text="Rechercher", command=self.display_research)

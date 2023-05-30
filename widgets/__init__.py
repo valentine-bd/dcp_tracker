@@ -1,2 +1,2 @@
 """Defini tout les modules du package"""
-__all__ = ["ajout_dcp", "output","search", "main_window"]
+__all__ = ["ajout_dcp", "output","search","delete","main_window"]
